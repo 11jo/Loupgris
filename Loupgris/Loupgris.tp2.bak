@@ -1,0 +1,162 @@
+BACKUP ~weidu_external/Loupgris/backup~
+AUTHOR ~~
+VERSION ~~
+
+BEGIN ~Sournois : Pas besoin d'être invisible pour attaquer en traître~
+DESIGNATED 1  SUBCOMPONENT ~Loupgris~
+LABEL ~Loupgris-Sournoise~
+
+
+COPY ~Loupgris/jodo916.itm~ ~Override~
+  SAY NAME1 ~Sournois~
+  SAY NAME2 ~Sournois~
+  SAY UNIDENTIFIED_DESC ~Sournois
+  
+Pas besoin d'être invisible pour attaquer en traître :
+
+Une combinaison de toutes les ficelles apprises au cours d'innombrables batailles, cette faculté permet de transformer chaque attaque, effectuée dans le dos d'un adversaire, en une Attaque sournoise, utilisant bien évidemment le modificateur de dommages du voleur.~
+  SAY DESC ~Sournois
+  
+Pas besoin d'être invisible pour attaquer en traître :
+
+Une combinaison de toutes les ficelles apprises au cours d'innombrables batailles, cette faculté permet de transformer chaque attaque, effectuée dans le dos d'un adversaire, en une Attaque sournoise, utilisant bien évidemment le modificateur de dommages du voleur.~
+
+COPY ~Loupgris/jodo916.spl~ ~Override~
+  SAY NAME1 ~Sournois~
+  SAY NAME2 ~Sournois~
+  SAY UNIDENTIFIED_DESC ~Sournois
+  
+Pas besoin d'être invisible pour attaquer en traître :
+
+Une combinaison de toutes les ficelles apprises au cours d'innombrables batailles, cette faculté permet de transformer chaque attaque, effectuée dans le dos d'un adversaire, en une Attaque sournoise, utilisant bien évidemment le modificateur de dommages du voleur.~
+  SAY DESC ~Sournois
+  
+Pas besoin d'être invisible pour attaquer en traître :
+
+Une combinaison de toutes les ficelles apprises au cours d'innombrables batailles, cette faculté permet de transformer chaque attaque, effectuée dans le dos d'un adversaire, en une Attaque sournoise, utilisant bien évidemment le modificateur de dommages du voleur.~
+
+	OUTER_SPRINT "LoupgrisGLOBAL" "jodo916"
+
+EXTEND_BOTTOM ~baldur.bcs~ ~Loupgris/Loupgris.baf~ //
+    EVALUATE_BUFFER
+EXTEND_BOTTOM ~BALDUR25.bcs~ ~Loupgris/Loupgris.baf~ //
+    EVALUATE_BUFFER
+
+
+BEGIN ~Furtif : Pas besoin d'attaquer dans le dos quand on est invisible~
+DESIGNATED 2  SUBCOMPONENT ~Loupgris~
+LABEL ~Loupgris-Invisible~
+
+
+COPY ~Loupgris/join916.itm~ ~Override~
+  SAY NAME1 ~Furtif~
+  SAY NAME2 ~Furtif~
+  SAY UNIDENTIFIED_DESC ~Furtif
+  
+Pas besoin d'attaquer dans le dos quand on est invisible :
+
+Une combinaison de toutes les ficelles apprises au cours d'innombrables batailles, cette faculté permet de transformer chaque attaque, en étant invisible, en une Attaque sournoise, utilisant bien évidemment le modificateur de dommages du voleur.~
+  SAY DESC ~Furtif
+  
+Pas besoin d'attaquer dans le dos quand on est invisible :
+
+Une combinaison de toutes les ficelles apprises au cours d'innombrables batailles, cette faculté permet de transformer chaque attaque, en étant invisible, en une Attaque sournoise, utilisant bien évidemment le modificateur de dommages du voleur.~
+
+COPY ~Loupgris/join916.spl~ ~Override~
+  SAY NAME1 ~Furtif~
+  SAY NAME2 ~Furtif~
+  SAY UNIDENTIFIED_DESC ~Furtif
+  
+Pas besoin d'attaquer dans le dos quand on est invisible :
+
+Une combinaison de toutes les ficelles apprises au cours d'innombrables batailles, cette faculté permet de transformer chaque attaque, en étant invisible, en une Attaque sournoise, utilisant bien évidemment le modificateur de dommages du voleur.~
+  SAY DESC ~Furtif
+  
+Pas besoin d'attaquer dans le dos quand on est invisible :
+
+Une combinaison de toutes les ficelles apprises au cours d'innombrables batailles, cette faculté permet de transformer chaque attaque, en étant invisible, en une Attaque sournoise, utilisant bien évidemment le modificateur de dommages du voleur.~
+
+	OUTER_SPRINT "LoupgrisGLOBAL" "join916"
+
+EXTEND_BOTTOM ~baldur.bcs~ ~Loupgris/Loupgris.baf~ //
+    EVALUATE_BUFFER
+EXTEND_BOTTOM ~BALDUR25.bcs~ ~Loupgris/Loupgris.baf~ //
+    EVALUATE_BUFFER
+    EVALUATE_BUFFER
+
+
+BEGIN ~Délai de 1 round avant une nouvelle attaque sournoises sur la même créature~
+DESIGNATED 3  SUBCOMPONENT ~Loupvert Sournoises DD3.5~
+LABEL ~Loupgris-Delay1~
+REQUIRE_PREDICATE (FILE_EXISTS_IN_GAME ~BACKSTAB.spl~) ~ Sournoises DD3.5 not activated~
+
+COPY_EXISTING ~BACKSTAB.spl~ ~override/BACKSTAB.spl~
+	LPF ALTER_SPELL_EFFECT
+		INT_VAR
+			check_headers = 1			
+			match_opcode = 292
+			duration = 72 // 1 round avant une nouvelle attaque
+		END
+
+BEGIN ~Délai de 2 rounds avant une nouvelle attaque sournoises sur la même créature~
+DESIGNATED 4  SUBCOMPONENT ~Loupvert Sournoises DD3.5~
+LABEL ~Loupgris-Delay2~
+REQUIRE_PREDICATE (FILE_EXISTS_IN_GAME ~BACKSTAB.spl~) ~Sournoises DD3.5 not activated~
+
+COPY_EXISTING ~BACKSTAB.spl~ ~override/BACKSTAB.spl~
+	LPF ALTER_SPELL_EFFECT
+		INT_VAR
+			check_headers = 1			
+			match_opcode = 292
+			duration = 144 // 2 rounds avant une nouvelle attaque
+		END
+
+BEGIN ~Délai de 3 rounds avant une nouvelle attaque sournoises sur la même créature~
+DESIGNATED 4  SUBCOMPONENT ~Loupvert Sournoises DD3.5~
+LABEL ~Loupgris-Delay3~
+REQUIRE_PREDICATE (FILE_EXISTS_IN_GAME ~BACKSTAB.spl~) ~Sournoises DD3.5 not activated~
+
+COPY_EXISTING ~BACKSTAB.spl~ ~override/BACKSTAB.spl~
+	LPF ALTER_SPELL_EFFECT
+		INT_VAR
+			check_headers = 1			
+			match_opcode = 292
+			duration = 216 // 3 rounds avant une nouvelle attaque
+		END
+
+BEGIN ~Délai de 4 rounds avant une nouvelle attaque sournoises sur la même créature~
+DESIGNATED 4  SUBCOMPONENT ~Loupvert Sournoises DD3.5~
+LABEL ~Loupgris-Delay4~
+REQUIRE_PREDICATE (FILE_EXISTS_IN_GAME ~BACKSTAB.spl~) ~Sournoises DD3.5 not activated~
+
+COPY_EXISTING ~BACKSTAB.spl~ ~override/BACKSTAB.spl~
+	LPF ALTER_SPELL_EFFECT
+		INT_VAR
+			check_headers = 1			
+			match_opcode = 292
+			duration = 288 // 4 rounds avant une nouvelle attaque
+		END
+
+BEGIN ~Aucun délai entre les attaques sournoises~
+DESIGNATED 5  SUBCOMPONENT ~Loupvert Sournoises DD3.5~
+LABEL ~Loupgris-Delay0~
+REQUIRE_PREDICATE (FILE_EXISTS_IN_GAME ~BACKSTAB.spl~) ~Sournoises DD3.5 not activated~
+COPY_EXISTING ~BACKSTAB.spl~ ~override/BACKSTAB.spl~
+	LPF DELETE_SPELL_EFFECT INT_VAR opcode_to_delete=292  // Aucune restriction
+		END
+
+// [139] Visuel : Affiche la StrRef (console)
+
+// [177] Utilisation d'un fichier EFF
+
+// [340] Sort : Suite à une attaque sournoise
+
+// [146] Incantation de Sort : Sur une cible
+
+// [292] Protection : Attaque sournoise
+
+// [148] Incantation de Sort : Sur une zone
+
+// [101] Protection : Opcode
+
+// [337] Dissipation : Opcode

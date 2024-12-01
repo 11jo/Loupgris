@@ -1,0 +1,10 @@
+IF
+	Global("JOLoupgris","GLOBAL",0)
+THEN
+  RESPONSE #100
+		Wait(10)
+		CreateVisualEffectObject("SPHOLY",Player1)
+		GiveItemCreate("%LoupgrisGLOBAL%",Player1,0,0,0)  //
+		ActionOverride(Player1,SetItemFlags("%LoupgrisGLOBAL%",IDENTIFIED,TRUE))  //
+		SetGlobal("JOLoupgris","GLOBAL",1)
+END
