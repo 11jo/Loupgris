@@ -1,0 +1,49 @@
+IF
+	Global("JOHADGAL","GLOBAL",1)
+THEN
+  RESPONSE #100
+		Wait(1)
+		DisplayStringHead("JOHADGAL",@6010)
+		Kill("JOHADGAL")
+		SetGlobal("JOHADGAL","GLOBAL",3)
+END
+
+IF
+	Global("JOHADGAL","GLOBAL",2)
+THEN
+  RESPONSE #100
+		Wait(1)
+		DisplayStringHead("JOHADGAL",@6011)
+		Wait(1)
+		ReallyForceSpell("JOHADGAL",WIZARD_FIREBALL)
+		Wait(2)
+		DestroyItem("%LoupgrisGLOBAL%")
+		Kill("JOHADGAL")
+		SetGlobal("JOHADGAL","GLOBAL",3)
+END
+
+IF
+	Range([GOODCUTOFF],3)
+	Global("JOHADGAL","GLOBAL",0)
+THEN
+  RESPONSE #100
+		StartDialogueNoSet([PC])
+END
+
+/*
+IF
+	See([GOODCUTOFF])
+	AreaCheck("XG0017")
+	NumTimesTalkedTo(0)
+THEN
+	RESPONSE #100
+		StartDialogueNoSet([PC])
+END
+
+IF
+	Global("EnteredXG0117","XG0117",1)
+THEN
+	RESPONSE #100
+		EscapeArea()
+END
+*/

@@ -1,0 +1,8 @@
+IF
+	Global("DyingJOHADGAL","GLOBAL",0)
+THEN
+  RESPONSE #100
+		Wait(1)
+		CreateCreature("JOHADGAL",[3042.3411],0)
+		SetGlobal("DyingJOHADGAL","GLOBAL",1)
+END

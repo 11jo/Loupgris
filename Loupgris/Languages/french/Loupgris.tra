@@ -6,14 +6,14 @@
   
 Pas besoin d'être invisible pour attaquer en traître :
 
-Une combinaison de toutes les ficelles apprises au cours d'innombrables batailles, cette faculté permet de transformer chaque attaque, effectuée dans le dos d'un adversaire, en une Attaque sournoise, utilisant bien évidemment le modificateur de dommages du voleur.~
+Cette tablette de pierre détaille une combinaison de toutes les ficelles apprises au cours d'innombrables batailles, cette faculté permet de transformer chaque attaque, effectuée dans le dos d'un adversaire, en une Attaque sournoise, utilisant bien évidemment le modificateur de dommages du voleur.~
 @5006 = ~Furtif : Pas besoin d'attaquer dans le dos quand on est invisible~
 @5007 = ~Furtif~
 @5008 = ~Furtif
   
 Pas besoin d'attaquer dans le dos quand on est invisible :
 
-Une combinaison de toutes les ficelles apprises au cours d'innombrables batailles, cette faculté permet de transformer chaque attaque, en étant invisible, en une Attaque sournoise, utilisant bien évidemment le modificateur de dommages du voleur.~
+Cette tablette de pierre détaille une combinaison de toutes les ficelles apprises au cours d'innombrables batailles, cette faculté permet de transformer chaque attaque, en étant invisible, en une Attaque sournoise, utilisant bien évidemment le modificateur de dommages du voleur.~
 @5010 = ~Délai de 1 round avant une nouvelle attaque sournoises sur la même créature~
 @5011 = ~Sournoises DD3.5~
 @5013 = ~Délai de 2 rounds avant une nouvelle attaque sournoises sur la même créature~
@@ -21,3 +21,21 @@ Une combinaison de toutes les ficelles apprises au cours d'innombrables bataille
 @5015 = ~Délai de 3 rounds avant une nouvelle attaque sournoises sur la même créature~
 @5016 = ~Délai de 4 rounds avant une nouvelle attaque sournoises sur la même créature~
 @5017 = ~Aucun délai entre les attaques sournoises~
+
+// JOHADGAL
+@6000  = ~Attendez ! Vous étiez en cellule... Écouteriez-vous la dernière requête d'une voleuse de l'ombre ?~
+@6001  = ~Que voulez vous ? Mon temps est compté.~
+@6002  = ~Non ! Mon temps est compté...~
+@6003  = ~Je détiens un ouvrage rare, un secret de voleur...~
+@6004  = ~Ne sombrez pas dans la tragédie, je peux essayer de vous soigner.~
+@6005  = ~Vos derniers instants ne m'intéresse pas vraiment.~
+@6006  = ~Mon état est désespéré et ces techniques ne doivent en aucun cas servir notre bourreau.~
+@6007  = ~Très bien, vous pouvez compter sur moi~
+@6008  = ~J'espère que vous enfoncerez votre lame dans le dos de ce maudit magicien.~
+@6009  = ~Je vois ...~
+@6010  = ~La vie est merveilleuse...~
+@6011  = ~Un tel ouvrage ne peut tomber entre les mains de l’ennemi !~
+@6012  = ~Vous souhaitez me le confier ?~
+
+// JOHADDUD
+// @7000
