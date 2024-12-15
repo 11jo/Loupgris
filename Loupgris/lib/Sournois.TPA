@@ -1,5 +1,5 @@
 
-COPY ~Loupgris/jodo916.itm~ ~Override~
+COPY ~Loupgris/itm/jodo916.itm~ ~Override~
   SAY NAME1 @5003 /* Sournois */
   SAY NAME2 @5003 /* Sournois */
   SAY UNIDENTIFIED_DESC @5004 /* Sournois
@@ -13,7 +13,7 @@ Pas besoin d'être invisible pour attaquer en traître :
 
 Une combinaison de toutes les ficelles apprises au cours d'innombrables batailles, cette faculté permet de transformer chaque attaque, effectuée dans le dos d'un adversaire, en une Attaque sournoise, utilisant bien évidemment le modificateur de dommages du voleur. */
 
-COPY ~Loupgris/jodo916.spl~ ~Override~
+COPY ~Loupgris/spl/jodo916.spl~ ~Override~
   SAY NAME1 @5003 /* Sournois */
   SAY NAME2 @5003 /* Sournois */
   SAY UNIDENTIFIED_DESC @5004 /* Sournois
@@ -29,14 +29,14 @@ Une combinaison de toutes les ficelles apprises au cours d'innombrables bataille
 
 	OUTER_SPRINT "LoupgrisGLOBAL" "jodo916"
 
-EXTEND_BOTTOM ~baldur.bcs~ ~Loupgris/Loupgris.baf~
+EXTEND_BOTTOM ~baldur.bcs~ ~Loupgris/baf/Loupgris.baf~
     EVALUATE_BUFFER
 
-EXTEND_BOTTOM ~BALDUR25.bcs~ ~Loupgris/Loupgris.baf~
+EXTEND_BOTTOM ~BALDUR25.bcs~ ~Loupgris/baf/Loupgris.baf~
     EVALUATE_BUFFER
 
 ACTION_IF GAME_IS ~iwdee~ BEGIN
-EXTEND_BOTTOM ~AR1006.bcs~ ~Loupgris/Loupgris.baf~
+EXTEND_BOTTOM ~AR1006.bcs~ ~Loupgris/baf/Loupgris.baf~
     EVALUATE_BUFFER
 END
 

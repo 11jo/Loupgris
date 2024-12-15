@@ -1,5 +1,5 @@
 
-COPY ~Loupgris/join916.itm~ ~Override~
+COPY ~Loupgris/itm/join916.itm~ ~Override~
   SAY NAME1 @5007 /* Furtif */
   SAY NAME2 @5007 /* Furtif */
   SAY UNIDENTIFIED_DESC @5008 /* Furtif
@@ -13,7 +13,7 @@ Pas besoin d'attaquer dans le dos quand on est invisible :
 
 Une combinaison de toutes les ficelles apprises au cours d'innombrables batailles, cette faculté permet de transformer chaque attaque, en étant invisible, en une Attaque sournoise, utilisant bien évidemment le modificateur de dommages du voleur. */
 
-COPY ~Loupgris/join916.spl~ ~Override~
+COPY ~Loupgris/spl/join916.spl~ ~Override~
   SAY NAME1 @5007 /* Furtif */
   SAY NAME2 @5007 /* Furtif */
   SAY UNIDENTIFIED_DESC @5008 /* Furtif
@@ -29,13 +29,13 @@ Une combinaison de toutes les ficelles apprises au cours d'innombrables bataille
 
 	OUTER_SPRINT "LoupgrisGLOBAL" "join916"
 
-EXTEND_BOTTOM ~baldur.bcs~ ~Loupgris/Loupgris.baf~
+EXTEND_BOTTOM ~baldur.bcs~ ~Loupgris/baf/Loupgris.baf~
     EVALUATE_BUFFER
 	
-EXTEND_BOTTOM ~BALDUR25.bcs~ ~Loupgris/Loupgris.baf~
+EXTEND_BOTTOM ~BALDUR25.bcs~ ~Loupgris/baf/Loupgris.baf~
     EVALUATE_BUFFER
 
 ACTION_IF GAME_IS ~iwdee~ BEGIN
-EXTEND_BOTTOM ~AR1006.bcs~ ~Loupgris/Loupgris.baf~
+EXTEND_BOTTOM ~AR1006.bcs~ ~Loupgris/baf/Loupgris.baf~
     EVALUATE_BUFFER
 END

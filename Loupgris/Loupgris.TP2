@@ -10,9 +10,9 @@ BEGIN @5001 /* Sournois : Pas besoin d'être invisible pour attaquer en traître
 DESIGNATED 1  SUBCOMPONENT @5002 /* Loupgris */
 LABEL ~Loupgris-Sournoise~
 	
-	INCLUDE ~Loupgris/Sournois.tpa~
+	INCLUDE ~Loupgris/lib/Sournois.tpa~
 ACTION_IF NOT GAME_IS ~iwdee~ BEGIN
-	INCLUDE ~Loupgris/Loupgris.tpa~
+	INCLUDE ~Loupgris/lib/Loupgris.tpa~
 END
 
 
@@ -20,9 +20,19 @@ BEGIN @5006 /* Furtif : Pas besoin d'attaquer dans le dos quand on est invisible
 DESIGNATED 2  SUBCOMPONENT @5002 /* Loupgris */
 LABEL ~Loupgris-Invisible~
 	
-	INCLUDE ~Loupgris/Furtif.tpa~
+	INCLUDE ~Loupgris/lib/Furtif.tpa~
 ACTION_IF NOT GAME_IS ~iwdee~ BEGIN
-	INCLUDE ~Loupgris/Loupgris.tpa~
+	INCLUDE ~Loupgris/lib/Loupgris.tpa~
+END
+
+
+BEGIN @5018 /* Vilain : Pas besoin d'être de dos ou invisible pour être un traître sournois */
+DESIGNATED 8 SUBCOMPONENT @5002 /* Loupgris */
+LABEL ~Loupgris-Vilain~
+	
+	INCLUDE ~Loupgris/lib/Vilain.tpa~
+ACTION_IF NOT GAME_IS ~iwdee~ BEGIN
+	INCLUDE ~Loupgris/lib/Loupgris.tpa~
 END
 
 
@@ -101,20 +111,3 @@ COPY_EXISTING ~BACKSTAB.spl~ ~override/BACKSTAB.spl~
 // [101] Protection : Opcode
 
 // [337] Dissipation : Opcode
-
-
-
-COPY_EXISTING ~ISHADDUD.CRE~       ~override/JOHADGAL.CRE~
-  WRITE_ASCII 0x280 ~JOHADGAL~ (8) // Script name / Death variable
-  WRITE_ASCII SCRIPT_OVERRIDE ~JOHADGAL~
-  WRITE_ASCII DIALOG ~JOHADGAL~
-  WRITE_BYTE 0x270 ~128~ // Allegiance
-  WRITE_LONG 0x28 ~0x4710~ // SLEEPING_WOMAN_ELF - 0x4710
-  WRITE_BYTE 0x237 ~2~ // FEMALE
-  
-COPY_EXISTING ~ISHADDUD.CRE~       ~override/JOHADDUD.CRE~
-  WRITE_ASCII 0x280 ~JOHADDUD~ (8) // Script name / Death variable
-  WRITE_ASCII SCRIPT_OVERRIDE ~JOHADDUD~
-  WRITE_ASCII DIALOG ~JOHADDUD~
-  WRITE_BYTE 0x270 ~128~ // Allegiance
-  WRITE_LONG 0x28 ~0x4400~ // SLEEPING_MAN_HUMAN - 0x4400

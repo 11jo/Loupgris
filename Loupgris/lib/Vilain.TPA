@@ -1,0 +1,42 @@
+
+COPY ~Loupgris/itm/jovi916.itm~ ~Override~
+  SAY NAME1 @5019 /* Vilain */
+  SAY NAME2 @5019 /* Vilain */
+  SAY UNIDENTIFIED_DESC @5020 /* Vilain
+  
+Pas besoin d'être de dos ou invisible pour être un traître sournois :
+
+Une combinaison de toutes les ficelles apprises au cours d'innombrables batailles, cette faculté permet de transformer chaque attaque est une Attaque sournoise, utilisant bien évidemment le modificateur de dommages du voleur. */
+  SAY DESC @5020 /* Vilain
+  
+Pas besoin d'être de dos ou invisible pour être un traître sournois :
+
+Une combinaison de toutes les ficelles apprises au cours d'innombrables batailles, cette faculté permet de transformer chaque attaque est une Attaque sournoise, utilisant bien évidemment le modificateur de dommages du voleur. */
+
+COPY ~Loupgris/spl/jovi916.spl~ ~Override~
+  SAY NAME1 @5019 /* Vilain */
+  SAY NAME2 @5019 /* Vilain */
+  SAY UNIDENTIFIED_DESC @5020 /* Vilain
+  
+Pas besoin d'être de dos ou invisible pour être un traître sournois :
+
+Une combinaison de toutes les ficelles apprises au cours d'innombrables batailles, cette faculté permet de transformer chaque attaque est une Attaque sournoise, utilisant bien évidemment le modificateur de dommages du voleur. */
+  SAY DESC @5020 /* Vilain
+  
+Pas besoin d'être de dos ou invisible pour être un traître sournois :
+
+Une combinaison de toutes les ficelles apprises au cours d'innombrables batailles, cette faculté permet de transformer chaque attaque est une Attaque sournoise, utilisant bien évidemment le modificateur de dommages du voleur. */
+
+	OUTER_SPRINT "LoupgrisGLOBAL" "jovi916"
+
+EXTEND_BOTTOM ~baldur.bcs~ ~Loupgris/baf/Loupgris.baf~
+    EVALUATE_BUFFER
+
+EXTEND_BOTTOM ~BALDUR25.bcs~ ~Loupgris/baf/Loupgris.baf~
+    EVALUATE_BUFFER
+
+ACTION_IF GAME_IS ~iwdee~ BEGIN
+EXTEND_BOTTOM ~AR1006.bcs~ ~Loupgris/baf/Loupgris.baf~
+    EVALUATE_BUFFER
+END
+
