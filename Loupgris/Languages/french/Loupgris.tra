@@ -1,25 +1,16 @@
 
 @5001 = ~Sournois : Pas besoin d'être invisible pour attaquer en traître~
 @5002 = ~Loupgris~
-@5003 = ~Sournois~ ~Sournoise~
-@5004 = ~Sournois
+@5003 = ~Tablette Sournoise~
+@5004 = ~Tablette Sournoise
   
 Pas besoin d'être invisible pour attaquer en traître :
 
 Cette tablette de pierre détaille une combinaison de toutes les ficelles apprises au cours d'innombrables batailles, cette faculté permet de transformer chaque attaque, effectuée dans le dos d'un adversaire, en une Attaque sournoise, utilisant bien évidemment le modificateur de dommages du voleur.~
-@5006 = ~Furtif : Pas besoin d'attaquer dans le dos quand on est invisible~ ~Sournoise
-  
-Pas besoin d'être invisible pour attaquer en traîtresse :
-
-Cette tablette de pierre détaille une combinaison de toutes les ficelles apprises au cours d'innombrables batailles, cette faculté permet de transformer chaque attaque, effectuée dans le dos d'un adversaire, en une Attaque sournoise, utilisant bien évidemment le modificateur de dommages du voleur.~
+//@5005 = ~~
 @5006 = ~Furtif : Pas besoin d'attaquer dans le dos quand on est invisible~
-@5007 = ~Furtif~ ~Furtive~
-@5008 = ~Furtif
-  
-Pas besoin d'attaquer dans le dos quand on est invisible :
-
-Cette tablette de pierre détaille une combinaison de toutes les ficelles apprises au cours d'innombrables batailles, cette faculté permet de transformer chaque attaque, en étant invisible, en une Attaque sournoise, utilisant bien évidemment le modificateur de dommages du voleur.~
-@5010 = ~Délai de 1 round avant une nouvelle attaque sournoises sur la même créature~ ~Furtive
+@5007 = ~Tablette Furtive~
+@5008 = ~Tablette Furtive
   
 Pas besoin d'attaquer dans le dos quand on est invisible :
 
@@ -31,9 +22,9 @@ Cette tablette de pierre détaille une combinaison de toutes les ficelles appris
 @5015 = ~Délai de 3 rounds avant une nouvelle attaque sournoises sur la même créature~
 @5016 = ~Délai de 4 rounds avant une nouvelle attaque sournoises sur la même créature~
 @5017 = ~Aucun délai entre les attaques sournoises~
-@5018 = ~Pas besoin d'être de dos ou invisible pour être un traître sournois~
-@5019 = ~Vilain~ ~Vilaine~
-@5020 = ~Vilain
+@5018 = ~Vilain : Pas besoin d'être de dos ou invisible pour être un traître sournois~
+@5019 = ~Tablette du Vilain~
+@5020 = ~Tablette du Vilain
   
 Pas besoin d'être de dos ou invisible pour être un traître sournois :
 

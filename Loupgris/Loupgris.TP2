@@ -1,7 +1,33 @@
 BACKUP ~weidu_external/Loupgris/backup~
 AUTHOR ~~
 VERSION ~~
-		 
+
+
+ALWAYS
+
+	ACTION_IF GAME_IS ~bgee~ BEGIN
+		INCLUDE ~Loupgris/Lib/g3_bgee_cpmvars.tpa~
+		PRINT ~Game is BGEE~
+	END ELSE ACTION_IF GAME_IS ~eet~ BEGIN
+		INCLUDE ~eet/other/cpmvars/eet_cpmvars.tpa~
+		PRINT ~Game is EET~
+	END
+
+// EET chapter check.
+
+	ACTION_IF GAME_IS ~eet~ BEGIN
+			OUTER_SET bg2_chapter = 12
+	END ELSE BEGIN
+			OUTER_SET bg2_chapter = 0
+	END
+			OUTER_FOR (i = 1 ; i <= 10 ; ++i) BEGIN
+			OUTER_SET bg2_chapter = bg2_chapter + 1
+			OUTER_SPRINT name_source ~bg2_chapter_%i%~
+			OUTER_SET EVAL ~%name_source%~ = bg2_chapter
+	END
+
+END
+
 LANGUAGE ~Francais~
          ~french~
          ~Loupgris/Languages/French/Loupgris.tra~
@@ -37,9 +63,13 @@ END
 
 
 BEGIN @5010 /* Délai de 1 round avant une nouvelle attaque sournoises sur la même créature */
-DESIGNATED 3  SUBCOMPONENT @5011 /* Sournoises DD3.5 */
+DESIGNATED 3  SUBCOMPONENT @5011 /* Sournoises DD3.5 / Vanilla */
 LABEL ~Loupgris-Delay1~
-REQUIRE_PREDICATE (FILE_EXISTS_IN_GAME ~BACKSTAB.spl~) @5014 /* Sournoises DD3.5 not activated */
+//REQUIRE_PREDICATE (FILE_EXISTS_IN_GAME ~BACKSTAB.spl~) @5014 /* Sournoises DD3.5 not activated */
+
+ACTION_IF NOT FILE_EXISTS_IN_GAME ~BACKSTAB.spl~ BEGIN
+	COPY ~Loupgris/spl/BACKSTAB.spl~ ~Override~
+END
 
 COPY_EXISTING ~BACKSTAB.spl~ ~override/BACKSTAB.spl~
 	LPF ALTER_SPELL_EFFECT
@@ -50,9 +80,13 @@ COPY_EXISTING ~BACKSTAB.spl~ ~override/BACKSTAB.spl~
 		END
 
 BEGIN @5013 /* Délai de 2 rounds avant une nouvelle attaque sournoises sur la même créature */
-DESIGNATED 4  SUBCOMPONENT @5011 /* Sournoises DD3.5 */
+DESIGNATED 4  SUBCOMPONENT @5011 /* Sournoises DD3.5 / Vanilla */
 LABEL ~Loupgris-Delay2~
-REQUIRE_PREDICATE (FILE_EXISTS_IN_GAME ~BACKSTAB.spl~) @5014 /* Sournoises DD3.5 not activated */
+//REQUIRE_PREDICATE (FILE_EXISTS_IN_GAME ~BACKSTAB.spl~) @5014 /* Sournoises DD3.5 not activated */
+
+ACTION_IF NOT FILE_EXISTS_IN_GAME ~BACKSTAB.spl~ BEGIN
+	COPY ~Loupgris/spl/BACKSTAB.spl~ ~Override~
+END
 
 COPY_EXISTING ~BACKSTAB.spl~ ~override/BACKSTAB.spl~
 	LPF ALTER_SPELL_EFFECT
@@ -63,9 +97,13 @@ COPY_EXISTING ~BACKSTAB.spl~ ~override/BACKSTAB.spl~
 		END
 
 BEGIN @5015 /* Délai de 3 rounds avant une nouvelle attaque sournoises sur la même créature */
-DESIGNATED 5  SUBCOMPONENT @5011 /* Sournoises DD3.5 */
+DESIGNATED 5  SUBCOMPONENT @5011 /* Sournoises DD3.5 / Vanilla */
 LABEL ~Loupgris-Delay3~
-REQUIRE_PREDICATE (FILE_EXISTS_IN_GAME ~BACKSTAB.spl~) @5014 /* Sournoises DD3.5 not activated */
+//REQUIRE_PREDICATE (FILE_EXISTS_IN_GAME ~BACKSTAB.spl~) @5014 /* Sournoises DD3.5 not activated */
+
+ACTION_IF NOT FILE_EXISTS_IN_GAME ~BACKSTAB.spl~ BEGIN
+	COPY ~Loupgris/spl/BACKSTAB.spl~ ~Override~
+END
 
 COPY_EXISTING ~BACKSTAB.spl~ ~override/BACKSTAB.spl~
 	LPF ALTER_SPELL_EFFECT
@@ -76,9 +114,13 @@ COPY_EXISTING ~BACKSTAB.spl~ ~override/BACKSTAB.spl~
 		END
 
 BEGIN @5016 /* Délai de 4 rounds avant une nouvelle attaque sournoises sur la même créature */
-DESIGNATED 6  SUBCOMPONENT @5011 /* Sournoises DD3.5 */
+DESIGNATED 6  SUBCOMPONENT @5011 /* Sournoises DD3.5 / Vanilla */
 LABEL ~Loupgris-Delay4~
-REQUIRE_PREDICATE (FILE_EXISTS_IN_GAME ~BACKSTAB.spl~) @5014 /* Sournoises DD3.5 not activated */
+//REQUIRE_PREDICATE (FILE_EXISTS_IN_GAME ~BACKSTAB.spl~) @5014 /* Sournoises DD3.5 not activated */
+
+ACTION_IF NOT FILE_EXISTS_IN_GAME ~BACKSTAB.spl~ BEGIN
+	COPY ~Loupgris/spl/BACKSTAB.spl~ ~Override~
+END
 
 COPY_EXISTING ~BACKSTAB.spl~ ~override/BACKSTAB.spl~
 	LPF ALTER_SPELL_EFFECT
@@ -89,9 +131,14 @@ COPY_EXISTING ~BACKSTAB.spl~ ~override/BACKSTAB.spl~
 		END
 
 BEGIN @5017 /* Aucun délai entre les attaques sournoises */
-DESIGNATED 7  SUBCOMPONENT @5011 /* Sournoises DD3.5 */
+DESIGNATED 7  SUBCOMPONENT @5011 /* Sournoises DD3.5 / Vanilla */
 LABEL ~Loupgris-Delay0~
-REQUIRE_PREDICATE (FILE_EXISTS_IN_GAME ~BACKSTAB.spl~) @5014 /* Sournoises DD3.5 not activated */
+//REQUIRE_PREDICATE (FILE_EXISTS_IN_GAME ~BACKSTAB.spl~) @5014 /* Sournoises DD3.5 not activated */
+
+ACTION_IF NOT FILE_EXISTS_IN_GAME ~BACKSTAB.spl~ BEGIN
+	COPY ~Loupgris/spl/BACKSTAB.spl~ ~Override~
+END
+
 COPY_EXISTING ~BACKSTAB.spl~ ~override/BACKSTAB.spl~
 	LPF DELETE_SPELL_EFFECT INT_VAR opcode_to_delete=292  // Aucune restriction
 		END
