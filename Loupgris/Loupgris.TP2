@@ -26,6 +26,29 @@ ALWAYS
 			OUTER_SET EVAL ~%name_source%~ = bg2_chapter
 	END
 
+	ACTION_IF GAME_IS ~bg2ee eet~ BEGIN
+	
+			OUTER_SPRINT "JOHADDUD_AREA"				"AR0400"
+			OUTER_SPRINT "JOHADDUD_place"			"1308.2231"
+			OUTER_SPRINT "JOHADDUD_he"				"2497.2300"
+			OUTER_SPRINT "JOHADDUD_ho"				"1534.2803"
+			
+	END ELSE ACTION_IF GAME_IS ~bgee~ BEGIN
+	
+			OUTER_SPRINT "JOHADDUD_place"				"3042.3411" // NOT SET
+			OUTER_SPRINT "JOHADDUD_he"				"3042.3411" // NOT SET
+			OUTER_SPRINT "JOHADDUD_ho"				"3042.3411" // NOT SET
+			
+	END ELSE ACTION_IF GAME_IS ~iwdee~ BEGIN
+	
+			OUTER_SPRINT "JOHADDUD_place"				"3042.3411" // NOT SET
+			OUTER_SPRINT "JOHADDUD_he"				"3042.3411" // NOT SET
+			OUTER_SPRINT "JOHADDUD_ho"				"3042.3411" // NOT SET
+
+	END
+	
+		INCLUDE ~Loupgris/Lib/Tipun_lib.tph~
+	
 END
 
 LANGUAGE ~Francais~
@@ -37,6 +60,24 @@ DESIGNATED 1  SUBCOMPONENT @5002 /* Loupgris */
 LABEL ~Loupgris-Sournoise~
 	
 	INCLUDE ~Loupgris/lib/Sournois.tpa~
+	
+	INCLUDE ~Loupgris/lib/Furtif.tpa~
+	
+	INCLUDE ~Loupgris/lib/Vilain.tpa~
+
+	OUTER_SPRINT "LoupgrisGLOBAL" "jodo916"
+
+// EXTEND_BOTTOM ~baldur.bcs~ ~Loupgris/baf/Loupgris.baf~
+//    EVALUATE_BUFFER
+
+// EXTEND_BOTTOM ~BALDUR25.bcs~ ~Loupgris/baf/Loupgris.baf~
+//    EVALUATE_BUFFER
+
+ACTION_IF GAME_IS ~iwdee~ BEGIN
+EXTEND_BOTTOM ~AR1006.bcs~ ~Loupgris/baf/Loupgris.baf~
+    EVALUATE_BUFFER
+END
+
 ACTION_IF NOT GAME_IS ~iwdee~ BEGIN
 	INCLUDE ~Loupgris/lib/Loupgris.tpa~
 END
@@ -46,7 +87,25 @@ BEGIN @5006 /* Furtif : Pas besoin d'attaquer dans le dos quand on est invisible
 DESIGNATED 2  SUBCOMPONENT @5002 /* Loupgris */
 LABEL ~Loupgris-Invisible~
 	
+	INCLUDE ~Loupgris/lib/Sournois.tpa~
+	
 	INCLUDE ~Loupgris/lib/Furtif.tpa~
+	
+	INCLUDE ~Loupgris/lib/Vilain.tpa~
+
+	OUTER_SPRINT "LoupgrisGLOBAL" "join916"
+
+// EXTEND_BOTTOM ~baldur.bcs~ ~Loupgris/baf/Loupgris.baf~
+//    EVALUATE_BUFFER
+	
+// EXTEND_BOTTOM ~BALDUR25.bcs~ ~Loupgris/baf/Loupgris.baf~
+//    EVALUATE_BUFFER
+
+ACTION_IF GAME_IS ~iwdee~ BEGIN
+EXTEND_BOTTOM ~AR1006.bcs~ ~Loupgris/baf/Loupgris.baf~
+    EVALUATE_BUFFER
+END
+
 ACTION_IF NOT GAME_IS ~iwdee~ BEGIN
 	INCLUDE ~Loupgris/lib/Loupgris.tpa~
 END
@@ -56,7 +115,25 @@ BEGIN @5018 /* Vilain : Pas besoin d'être de dos ou invisible pour être un tra
 DESIGNATED 8 SUBCOMPONENT @5002 /* Loupgris */
 LABEL ~Loupgris-Vilain~
 	
+	INCLUDE ~Loupgris/lib/Sournois.tpa~
+	
+	INCLUDE ~Loupgris/lib/Furtif.tpa~
+	
 	INCLUDE ~Loupgris/lib/Vilain.tpa~
+
+	OUTER_SPRINT "LoupgrisGLOBAL" "jovi916"
+
+// EXTEND_BOTTOM ~baldur.bcs~ ~Loupgris/baf/Loupgris.baf~
+//    EVALUATE_BUFFER
+
+// EXTEND_BOTTOM ~BALDUR25.bcs~ ~Loupgris/baf/Loupgris.baf~
+//    EVALUATE_BUFFER
+
+ACTION_IF GAME_IS ~iwdee~ BEGIN
+EXTEND_BOTTOM ~AR1006.bcs~ ~Loupgris/baf/Loupgris.baf~
+    EVALUATE_BUFFER
+END
+
 ACTION_IF NOT GAME_IS ~iwdee~ BEGIN
 	INCLUDE ~Loupgris/lib/Loupgris.tpa~
 END

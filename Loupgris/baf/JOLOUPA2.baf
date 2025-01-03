@@ -1,0 +1,13 @@
+IF
+	Global("JOLoupgris_The_Night","GLOBAL",0)
+	// TimeOfDay(DAY)		
+	// GlobalTimerNotExpired("JOLoupgris_He_ho","GLOBAL")
+THEN
+	RESPONSE #100
+		SetGlobal("JOLoupgris_JOLOUPA2","MYAREA",0)
+		SetGlobal("JOLOUPAN_ISHERE","MYAREA",0)
+		// ActionOverride("JOSLOUM2",EscapeArea())
+		Wait(2)
+		DestroySelf()
+END
+

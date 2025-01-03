@@ -1,0 +1,15 @@
+IF
+	// GlobalTimerExpired("JOLoupgris_He_ho","GLOBAL")
+	!InMyArea("JOHADDUD")
+	!Dead("JOHADDUD")
+	Global("JOLoupgris_The_Night","GLOBAL",0)
+	//TimeOfDay(NIGHT)
+THEN
+	RESPONSE #100
+		// SetGlobal("JOLoupgris_The_Night","GLOBAL",1)
+		SetGlobal("JOLoupgris_The_Night","GLOBAL",1)
+		// CreateCreature("JOHADDUD",[%JOHADDUD_he%],0)
+		CreateCreature("JOLOUPAN",[2424.2337],0) // NO SET
+		CreateCreature("JOLOUPA2",[%JOHADDUD_place%],0)
+END
+

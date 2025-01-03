@@ -1,0 +1,26 @@
+IF
+	!InMyArea("JOHADDUD")
+	Global("JOSLOUM2_THE_DAY","LOCALS",0)
+THEN
+	RESPONSE #100
+		SetGlobal("JOSLOUM2_THE_DAY","LOCALS",1)
+		MoveToPointNoInterrupt([%JOHADDUD_place%])
+		DisplayStringHead(Myself,~Je suis le jour...~)
+END
+IF
+	InMyArea("JOHADDUD")
+	!Global("JOSLOUM2_THE_DAY","LOCALS",0)
+THEN
+	RESPONSE #100
+		SetGlobal("JOSLOUM2_THE_DAY","LOCALS",0)
+END
+
+/*
+IF
+	TimeOfDay(NIGHT)
+	!Global("JOSLOUM2_THE_DAY","LOCALS",0)
+THEN
+	RESPONSE #100
+		SetGlobal("JOSLOUM2_THE_DAY","LOCALS",0)
+END
+*/

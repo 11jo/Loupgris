@@ -26,16 +26,3 @@ Une combinaison de toutes les ficelles apprises au cours d'innombrables bataille
 Pas besoin d'attaquer dans le dos quand on est invisible :
 
 Une combinaison de toutes les ficelles apprises au cours d'innombrables batailles, cette faculté permet de transformer chaque attaque, en étant invisible, en une Attaque sournoise, utilisant bien évidemment le modificateur de dommages du voleur. */
-
-	OUTER_SPRINT "LoupgrisGLOBAL" "join916"
-
-EXTEND_BOTTOM ~baldur.bcs~ ~Loupgris/baf/Loupgris.baf~
-    EVALUATE_BUFFER
-	
-EXTEND_BOTTOM ~BALDUR25.bcs~ ~Loupgris/baf/Loupgris.baf~
-    EVALUATE_BUFFER
-
-ACTION_IF GAME_IS ~iwdee~ BEGIN
-EXTEND_BOTTOM ~AR1006.bcs~ ~Loupgris/baf/Loupgris.baf~
-    EVALUATE_BUFFER
-END
