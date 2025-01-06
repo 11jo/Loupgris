@@ -4,10 +4,17 @@ IF
 THEN
 	RESPONSE #100
 		DisplayStringHead(Myself,~Hé ho ! Hé ho !~)
+		Wait(2)
+		DisplayStringHead(Myself,~Je m'en vais au boulot !~)
 		MoveToPointNoInterrupt([%JOHADDUD_ho%])
+		DisplayStringHead(Myself,~Hé ho ! Hé ho !~)
+		Wait(2)
 		DisplayStringHead(Myself,~Je m'en vais au boulot !~)
 		MoveToPointNoInterrupt([%JOHADDUD_place%])
 		Wait(3)
+		DisplayStringHead(Myself,~Hé ho ! Hé ho !~)
+		Wait(2)
+		// SetGlobalTimer("JOLoupgris_Hey","LOCALS",ONE_ROUND)
 		SetGlobal("JOLoupgris_The_Night","GLOBAL",2)
 END
 
@@ -18,13 +25,12 @@ IF
 		Global("JOLoupgris_The_Night","GLOBAL",9)
 THEN
 	RESPONSE #100
-		ClearActions(Myself)
 		SetGlobal("JOLoupgris_The_Night","GLOBAL",0)
 		SetGlobal("JOLoupgris_The_Night_Is_Near","LOCALS",0)
-		UseItem("POTN10",Myself)
+		Wait(1)
 		DisplayStringHead(Myself,~Je suis la nuit...~)
+		UseItem("POTN10",Myself)
 		// SetGlobalTimer("JOLoupgris_He_ho","GLOBAL",ONE_DAY)
-		Wait(3)
 		EscapeArea()
 END
 
@@ -50,10 +56,12 @@ THEN
 	RESPONSE #100
 		DisplayStringHead(Myself,~C'est ma place.~)
 		ReallyForceSpellRES("jolo695","JOSLOUM2")
-		Continue()
+		Wait(2)
+		ActionOverride("JOSLOUM2",DisplayStringHead("JOSLOUM2",~Mais euh !.~))
 END
 
 IF
+	InMyArea("JOLOUPA2")
 	Global("JOLoupgris_The_Night","GLOBAL",2)
 	Global("JOLoupgris_JOLOUPA2","MYAREA",0)
 	!Range("JOLOUPA2",3)
@@ -62,7 +70,6 @@ THEN
 		SetGlobal("JOLoupgris_JOLOUPA2","MYAREA",1)
 		ActionOverride("JOHADDUD",LeaveAreaLUA("%JOHADDUD_AREA%","",[%JOHADDUD_place%],0))
 		// MoveToObject("JOLOUPA2")
-		Continue()
 END
 
 IF
@@ -80,7 +87,7 @@ THEN
 END
 
 IF
-	// GlobalTimerExpired("JOLoupgris_Hey","LOCALS")
+	GlobalTimerExpired("JOLoupgris_Hey","LOCALS")
 	Global("JOLoupgris_The_Night","GLOBAL",2)
 	Global("JOLOUPGRIS_TALKBAF","LOCALS",0)
 	See(Player1)
@@ -97,7 +104,7 @@ THEN
 END
 
 IF
-	// GlobalTimerExpired("JOLoupgris_Hey","LOCALS")
+	GlobalTimerExpired("JOLoupgris_Hey","LOCALS")
 	Global("JOLoupgris_The_Night","GLOBAL",2)
 	Global("JOLOUPGRIS_TALKBAF","LOCALS",0)
 	See(Player2)
@@ -114,7 +121,7 @@ THEN
 END
 
 IF
-	// GlobalTimerExpired("JOLoupgris_Hey","LOCALS")
+	GlobalTimerExpired("JOLoupgris_Hey","LOCALS")
 	Global("JOLoupgris_The_Night","GLOBAL",2)
 	Global("JOLOUPGRIS_TALKBAF","LOCALS",0)
 	See(Player3)
@@ -131,7 +138,7 @@ THEN
 END
 
 IF
-	// GlobalTimerExpired("JOLoupgris_Hey","LOCALS")
+	GlobalTimerExpired("JOLoupgris_Hey","LOCALS")
 	Global("JOLoupgris_The_Night","GLOBAL",2)
 	Global("JOLOUPGRIS_TALKBAF","LOCALS",0)
 	See(Player4)
@@ -148,7 +155,7 @@ THEN
 END
 
 IF
-	// GlobalTimerExpired("JOLoupgris_Hey","LOCALS")
+	GlobalTimerExpired("JOLoupgris_Hey","LOCALS")
 	Global("JOLoupgris_The_Night","GLOBAL",2)
 	Global("JOLOUPGRIS_TALKBAF","LOCALS",0)
 	See(Player5)
@@ -165,7 +172,7 @@ THEN
 END
 
 IF
-	// GlobalTimerExpired("JOLoupgris_Hey","LOCALS")
+	GlobalTimerExpired("JOLoupgris_Hey","LOCALS")
 	Global("JOLoupgris_The_Night","GLOBAL",2)
 	Global("JOLOUPGRIS_TALKBAF","LOCALS",0)
 	See(Player6)
@@ -187,10 +194,9 @@ IF
 	RandomNum(2,1)
 THEN
 	RESPONSE #100
-		// SetGlobalTimer("JOLoupgris_Hey","LOCALS",TWO_TURNS)
-		Wait(2)
-		DisplayStringHead(Myself,~Une bonne tête d'assassin !~)
 		SetGlobal("JOLOUPGRIS_TALKBAF","LOCALS",0)
+		SetGlobalTimer("JOLoupgris_Hey","LOCALS",TWO_TURNS)
+		DisplayStringHead(Myself,~Une bonne tête d'assassin !~)
 END
 
 IF
@@ -199,8 +205,7 @@ IF
 	RandomNum(2,2)
 THEN
 	RESPONSE #100
-		// SetGlobalTimer("JOLoupgris_Hey","LOCALS",TWO_TURNS)
-		Wait(2)
-		DisplayStringHead(Myself,~Ça sens la traîtrise...~)
 		SetGlobal("JOLOUPGRIS_TALKBAF","LOCALS",0)
+		SetGlobalTimer("JOLoupgris_Hey","LOCALS",TWO_TURNS)
+		DisplayStringHead(Myself,~Ça sens la traîtrise...~)
 END

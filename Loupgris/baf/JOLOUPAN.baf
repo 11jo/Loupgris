@@ -11,6 +11,7 @@ THEN
 		OpenDoor("DOOR09")
 		Wait(2)
 		CreateCreature("JOHADDUD",[%JOHADDUD_he%],0)
+		CreateCreature("JOLOUPA2",[%JOHADDUD_place%],0)
 		// CreateCreature("JOSLOUM2",[%JOHADDUD_place%],0)
 		Wait(1)
 		CloseDoor("DOOR09")

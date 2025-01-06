@@ -10,6 +10,5 @@ THEN
 		SetGlobal("JOLoupgris_The_Night","GLOBAL",1)
 		// CreateCreature("JOHADDUD",[%JOHADDUD_he%],0)
 		CreateCreature("JOLOUPAN",[2424.2337],0) // NO SET
-		CreateCreature("JOLOUPA2",[%JOHADDUD_place%],0)
 END
 
