@@ -1,14 +1,30 @@
 IF
 	// GlobalTimerExpired("JOLoupgris_He_ho","GLOBAL")
-	!InMyArea("JOHADDUD")
-	!Dead("JOHADDUD")
+	// !InMyArea("JOHADDUD")
+	// !Dead("JOHADDUD")
+	Global("JOLoupgris_First_Night","MYAREA",0)
 	Global("JOLoupgris_The_Night","GLOBAL",0)
-	//TimeOfDay(NIGHT)
+	!TimeOfDay(DAY)
+	!TimeOfDay(MORNING)
 THEN
 	RESPONSE #100
 		// SetGlobal("JOLoupgris_The_Night","GLOBAL",1)
+		SetGlobal("JOLoupgris_First_Night","MYAREA",1)
 		SetGlobal("JOLoupgris_The_Night","GLOBAL",1)
 		// CreateCreature("JOHADDUD",[%JOHADDUD_he%],0)
-		CreateCreature("JOLOUPAN",[2424.2337],0) // NO SET
+		CreateCreatureImpassableAllowOverlap("JOLOUPAN",[%JOLOUPAN_place%],0) // NO SET
 END
 
+IF
+	GlobalTimerExpired("JOLoupgris_Wait","GLOBAL")
+	Global("JOLoupgris_First_Night","MYAREA",1)
+	!InMyArea("JOHADDUD")
+	!Dead("JOHADDUD")
+	Global("JOLoupgris_The_Night","GLOBAL",0)
+	!TimeOfDay(DAY)
+	!TimeOfDay(MORNING)
+THEN
+	RESPONSE #100
+		SetGlobal("JOLoupgris_The_Night","GLOBAL",2)
+		CreateCreature("JOHADDUD",[%JOHADDUD_place%],0) // NO SET
+END

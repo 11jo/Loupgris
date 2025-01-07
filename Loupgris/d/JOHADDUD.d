@@ -17,7 +17,7 @@ END
 
 // Main talk 1
 
-IF ~!Global("JOLoupgris_The_Night","GLOBAL",9)
+IF ~Global("JOLoupgris_The_Night","GLOBAL",2)
 OR(2)
 		Class(LastTalkedToBy,THIEF_ALL)
 		Kit(LastTalkedToBy,STALKER)
@@ -40,24 +40,25 @@ END
 
 // Main talk 2 no assassin in party
 
-IF ~Global("JOLoupgris_The_Night_Is_Near","LOCALS",0)~ THEN BEGIN Nope
+IF ~Global("JOLoupgris_The_Night_Is_Near","LOCALS",0)
+Global("JOLoupgris_The_Night","GLOBAL",2)~ THEN BEGIN Nope
   SAY ~Vot' vie n'a aucun intérêt pour moi.~
   IF ~~ THEN DO ~SetGlobal("JOLoupgris_The_Night_Is_Near","LOCALS",1)~ EXIT
 END
 
 IF ~Global("JOLoupgris_The_Night_Is_Near","LOCALS",1)
-!Global("JOLoupgris_The_Night","GLOBAL",9)~ THEN BEGIN Nope1
+Global("JOLoupgris_The_Night","GLOBAL",2)~ THEN BEGIN Nope1
   SAY ~Hum ?~
   IF ~~ THEN DO ~SetGlobal("JOLoupgris_The_Night_Is_Near","LOCALS",2)~ EXIT
 END
 
 IF ~Global("JOLoupgris_The_Night_Is_Near","LOCALS",2)
-!Global("JOLoupgris_The_Night","GLOBAL",9)~ THEN BEGIN Nope2
+Global("JOLoupgris_The_Night","GLOBAL",2)~ THEN BEGIN Nope2
   SAY ~Quelqu'un t'appelle là-bas... Loin d'ici...~
   IF ~~ THEN DO ~SetGlobal("JOLoupgris_The_Night_Is_Near","LOCALS",3)~ EXIT
 END
 
-IF ~!Global("JOLoupgris_The_Night","GLOBAL",9)
+IF ~Global("JOLoupgris_The_Night","GLOBAL",2)
 !GlobalGT("JOLoupgris_The_Night_Is_Near","LOCALS",6)
 GlobalGT("JOLoupgris_The_Night_Is_Near","LOCALS",2)~ THEN BEGIN Nope3
   SAY ~Et maintenant ?~
@@ -65,14 +66,14 @@ GlobalGT("JOLoupgris_The_Night_Is_Near","LOCALS",2)~ THEN BEGIN Nope3
 END
 
 IF ~Global("JOLoupgris_The_Night_Is_Near","LOCALS",7)
-!Global("JOLoupgris_The_Night","GLOBAL",9)
+Global("JOLoupgris_The_Night","GLOBAL",2)
 Gender(LastTalkedToBy,MALE)~ THEN BEGIN Nope4
   SAY ~Soit pas surpris si tu te retrouve avec une lame dans la panse...~
   IF ~~ THEN DO ~SetGlobal("JOLoupgris_The_Night","GLOBAL",9) SetGlobal("JOLoupgris_The_Night_Is_Near","LOCALS",0)~ EXIT
 END
 
 IF ~Global("JOLoupgris_The_Night_Is_Near","LOCALS",7)
-!Global("JOLoupgris_The_Night","GLOBAL",9)
+Global("JOLoupgris_The_Night","GLOBAL",2)
 Gender(LastTalkedToBy,FEMALE)~ THEN BEGIN Nope5
   SAY ~Soit pas surprise si tu te retrouve avec une lame dans la panse...~
   IF ~~ THEN DO ~SetGlobal("JOLoupgris_The_Night","GLOBAL",9) SetGlobal("JOLoupgris_The_Night_Is_Near","LOCALS",0)~ EXIT
