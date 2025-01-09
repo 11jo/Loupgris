@@ -41,11 +41,11 @@ IF
 		Range("JOSLOUM2",6)
 THEN
 	RESPONSE #100
-		SetGlobal("JOLoupgris_JOSLOUM","LOCALS",1)
 		DisplayStringHead(Myself,~C'est ma place.~)
-		ReallyForceSpellRES("jolo695","JOSLOUM2")
 		Wait(2)
+		ReallyForceSpellRES("jolo695","JOSLOUM2")
 		ActionOverride("JOSLOUM2",DisplayStringHead("JOSLOUM2",~Mais euh !.~))
+		SetGlobal("JOLoupgris_JOSLOUM","LOCALS",1)
 END
 
 IF

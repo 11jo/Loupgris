@@ -1,15 +1,14 @@
 IF
-	InMyArea(Player1)
 	!InMyArea("JOHADDUD")
-	Global("JOSLOUM2_THE_DAY","MYAREA",0)
+	See("JOSLOUM2")
+	Global("JOSLOUM2_IS_HERE","MYAREA",0)
 THEN
 	RESPONSE #100
-		SetGlobal("JOSLOUM2_IS_HERE","MYAREA",0)
-		CreateCreatureImpassableAllowOverlap("JOLOUPA2",[%JOLOUPA2_place%],0)
-		MoveToPointNoInterrupt([%JOSLOUM2_place%])
-		DisplayStringHead(Myself,~C'est ma place !~)
+		RandomWalk() 
+		DisplayStringHead(Myself,#11086)
 		Wait(2)
-		SetGlobal("JOSLOUM2_THE_DAY","MYAREA",1)
+		ActionOverride("JOSLOUM2",DisplayStringHead("JOSLOUM2",~Enfin !~))
+		SetGlobal("JOSLOUM2_IS_HERE","MYAREA",1)
 END
 
 IF

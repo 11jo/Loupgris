@@ -36,23 +36,25 @@ COPY ~Loupgris/cre/JOLOUPAN.CRE~			~Override~
 	WRITE_ASCII SCRIPT_OVERRIDE ~JOLOUPAN~ (8)
 	WRITE_ASCII DEATHVAR ~JOLOUPAN~ (8)
 
-COPY ~Loupgris/cre/JOLOUPAN.CRE~			~Override/JOLOUPA2.CRE~
+COPY ~Loupgris/cre/JOLOUPA2.CRE~			~Override/JOLOUPA2.CRE~
 	WRITE_ASCII SCRIPT_OVERRIDE ~JOLOUPA2~ (8)
 	WRITE_ASCII DEATHVAR ~JOLOUPA2~ (8)
 
-/*
+
 COPY_EXISTING ~%JOHADDUD_AREA%.ARE~			~override~
 	LPF ALTER_AREA_ACTOR_EX
 		STR_VAR
 		match_pos_x = "1337"
 		match_pos_y = "2176"
 		match_cre_file = "SLUMM2"
-		cre_file = ~JOSLOUM3~
-		name = "JOSLOUM3"
-		dialogue = "JOSLOUM2"
-		override_script = "JOSLOUM2"
+		//cre_file = ~JOSLOUM3~
+		//name = "JOSLOUM3"
+		//dialogue = "JOSLOUM2"
+		override_script = "JOSLUMM2"
 	END
-*/
+
+		COMPILE ~Loupgris/baf/JOSLUMM2.baf~	EVALUATE_BUFFER
+
 
 COPY_EXISTING ~ISHADDUD.CRE~			~override/JOHADDUD.CRE~
 	WRITE_ASCII 0x280 ~JOHADDUD~ (8) // Script name / Death variable
@@ -73,6 +75,13 @@ COPY_EXISTING ~ISHADDUD.CRE~			~override/JOHADDUD.CRE~
 
 		EXTEND_TOP ~%JOHADDUD_AREA%.BCS~	~Loupgris/baf/JOHADDUD_AREA.baf~	EVALUATE_BUFFER 
 
+// Spell remove abilities
+
+COPY ~Loupgris/spl/jolou668.spl~ ~Override~
+  SAY NAME1 @5021 /* ~Couardise~ */
+  SAY NAME2 @5021
+  SAY UNIDENTIFIED_DESC @5022 /* ~Certain assassin se repente... Quelle idée...~*/
+  SAY DESC @5022
 
 			END ELSE ACTION_IF GAME_IS ~bgee~ BEGIN
 

@@ -13,7 +13,6 @@ IF ~~ THEN BEGIN Yosh02
   IF ~~ THEN EXTERN YOSHJ Yosh02Yosh
 END
 
-// Yoshimo in party
 
 // Main talk 1
 
@@ -30,12 +29,14 @@ END
 
 IF ~~ THEN BEGIN 1
   SAY ~Petite joueuse...~
-  IF ~~ THEN EXIT
+  IF ~!Global("JOLoupgris_shame","GLOBAL",1)~ THEN EXIT
+  IF ~Global("JOLoupgris_shame","GLOBAL",1)~ THEN DO ~ReallyForceSpellRES("jolou668",LastTalkedToBy)~ EXIT
 END
 
 IF ~~ THEN BEGIN 2
   SAY ~Petit joueur...~
-  IF ~~ THEN EXIT
+  IF ~!Global("JOLoupgris_shame","GLOBAL",1)~ THEN EXIT
+  IF ~Global("JOLoupgris_shame","GLOBAL",1)~ THEN DO ~ReallyForceSpellRES("jolou668",LastTalkedToBy)~ EXIT
 END
 
 // Main talk 2 no assassin in party
@@ -99,6 +100,8 @@ IF ~~ THEN BEGIN 5
   IF ~Gender(LastTalkedToBy,MALE)~ THEN REPLY ~Vous me prenez pour un rigolo, ho ho !.~ GOTO 6MAN
   IF ~Gender(LastTalkedToBy,FEMALE)~ THEN REPLY ~Venez en au fait !~ GOTO 6WOMAN
   IF ~Gender(LastTalkedToBy,MALE)~ THEN REPLY ~Venez en au fait !~ GOTO 6MAN
+  IF ~Gender(LastTalkedToBy,FEMALE)~ THEN REPLY ~On rigole, on rigole mais en fait je souhaiterais renoncer à cette avantage honteux sur les autres habitant de Féérune...~ DO ~SetGlobal("JOLoupgris_shame","GLOBAL",1)~  GOTO 1
+  IF ~Gender(LastTalkedToBy,MALE)~ THEN REPLY ~On rigole, on rigole mais en fait je souhaiterais renoncer à cette avantage honteux sur les autres habitant de Féérune...~ DO ~SetGlobal("JOLoupgris_shame","GLOBAL",1)~  GOTO 2
   IF ~~ THEN REPLY ~Du vent le mendiant !~ EXIT
 END
 
