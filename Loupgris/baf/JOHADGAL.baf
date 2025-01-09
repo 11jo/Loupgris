@@ -12,11 +12,10 @@ IF
 	Global("JOHADGAL","GLOBAL",2)
 THEN
   RESPONSE #100
-		Wait(1)
 		DisplayStringHead("JOHADGAL",@6011)
-		Wait(1)
-		ReallyForceSpell("JOHADGAL",WIZARD_FIREBALL)
 		Wait(2)
+		ReallyForceSpell("JOHADGAL",WIZARD_FIREBALL)
+		Wait(1)
 		DestroyItem("%LoupgrisGLOBAL%")
 		Kill("JOHADGAL")
 		SetGlobal("JOHADGAL","GLOBAL",3)

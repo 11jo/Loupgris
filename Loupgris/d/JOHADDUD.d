@@ -127,9 +127,9 @@ END
 
 IF ~~ THEN BEGIN 8Sournoise
   SAY ~Pour ça il faut être capable d'attaquer dans le dos sans être invisible.~
-  IF ~Global("JOLoupgris_8Sournoise","GLOBAL",0)~ THEN REPLY ~Trêve de bavardages, vous sembliez sous entendre que c'était faisable ?~ GOTO 9.1Sournoise
-  IF ~Global("JOLoupgris_8Sournoise","GLOBAL",1)~ THEN REPLY ~Trêve de bavardages et passons au carnage !~ GOTO 9.2Sournoise
-  IF ~Global("JOLoupgris_8Sournoise","GLOBAL",2)~ THEN REPLY ~Trêve de bavardages, le meurtre n'attend pas.~ GOTO 9.3Sournoise
+  IF ~Global("JOLoupgris_want_more","GLOBAL",0)~ THEN REPLY ~Trêve de bavardages, vous sembliez sous entendre que c'était faisable ?~ GOTO 9.1Sournoise
+  IF ~Global("JOLoupgris_want_more","GLOBAL",1)~ THEN REPLY ~Trêve de bavardages et passons au carnage !~ GOTO 9.2Sournoise
+  IF ~Global("JOLoupgris_want_more","GLOBAL",2)~ THEN REPLY ~Trêve de bavardages, le meurtre n'attend pas.~ GOTO 9.3Sournoise
   IF ~Gender(LastTalkedToBy,FEMALE)~ THEN REPLY ~Bon, j'aime aussi d'autres méthodes.~ GOTO 6WOMAN
   IF ~Gender(LastTalkedToBy,MALE)~ THEN REPLY ~Bon, j'aime aussi d'autres méthodes.~ GOTO 6MAN
   IF ~~ THEN REPLY ~C'est une blague, charlatan !~ EXIT
@@ -137,8 +137,8 @@ END
 
 IF ~~ THEN BEGIN 9.1Sournoise
   SAY ~Vôtre soif de sang ne sera pas en reste avec la tablette Sournoise, pour 1000 pièces d'or elle est à vous !~
-  IF ~Gender(LastTalkedToBy,FEMALE) PartyGoldGT(999)~ THEN REPLY ~Je vois que vous n'hésitez pas à me détrousser au passage.~ DO ~SetGlobal("JOLoupgris_8Sournoise","GLOBAL",1) TakePartyGold(1000)~ GOTO 10SournoiseWOMAN
-  IF ~Gender(LastTalkedToBy,MALE) PartyGoldGT(999)~ THEN REPLY ~Je vois que vous n'hésitez pas à me détrousser au passage.~ DO ~SetGlobal("JOLoupgris_8Sournoise","GLOBAL",1) TakePartyGold(1000)~ GOTO 10SournoiseMAN
+  IF ~Gender(LastTalkedToBy,FEMALE) PartyGoldGT(999)~ THEN REPLY ~Je vois que vous n'hésitez pas à me détrousser au passage.~ DO ~SetGlobal("JOLoupgris_want_more","GLOBAL",1) TakePartyGold(1000)~ GOTO 10SournoiseWOMAN
+  IF ~Gender(LastTalkedToBy,MALE) PartyGoldGT(999)~ THEN REPLY ~Je vois que vous n'hésitez pas à me détrousser au passage.~ DO ~SetGlobal("JOLoupgris_want_more","GLOBAL",1) TakePartyGold(1000)~ GOTO 10SournoiseMAN
   IF ~Gender(LastTalkedToBy,FEMALE)~ THEN REPLY ~Bon, j'aime aussi d'autres méthodes.~ GOTO 6WOMAN
   IF ~Gender(LastTalkedToBy,MALE)~ THEN REPLY ~Bon, j'aime aussi d'autres méthodes.~ GOTO 6MAN
   IF ~~ THEN REPLY ~C'est une blague, charlatan !~ EXIT
@@ -146,8 +146,8 @@ END
 
 IF ~~ THEN BEGIN 9.2Sournoise
   SAY ~Vôtre soif de sang pourra-elle être étanchée avec la tablette Sournoise ? Pour 5000 pièces d'or elle est à vous !~
-  IF ~Gender(LastTalkedToBy,FEMALE) PartyGoldGT(4999)~ THEN REPLY ~Je vois que vous ne vous contentez pas d'une seule bourse...~ DO ~SetGlobal("JOLoupgris_8Sournoise","GLOBAL",2) TakePartyGold(5000)~ GOTO 10SournoiseWOMAN
-  IF ~Gender(LastTalkedToBy,MALE) PartyGoldGT(4999)~ THEN REPLY ~Je vois que vous ne vous contentez pas d'une seule bourse...~ DO ~SetGlobal("JOLoupgris_8Sournoise","GLOBAL",2) TakePartyGold(5000)~ GOTO 10SournoiseMAN
+  IF ~Gender(LastTalkedToBy,FEMALE) PartyGoldGT(4999)~ THEN REPLY ~Je vois que vous ne vous contentez pas d'une seule bourse...~ DO ~SetGlobal("JOLoupgris_want_more","GLOBAL",2) TakePartyGold(5000)~ GOTO 10SournoiseWOMAN
+  IF ~Gender(LastTalkedToBy,MALE) PartyGoldGT(4999)~ THEN REPLY ~Je vois que vous ne vous contentez pas d'une seule bourse...~ DO ~SetGlobal("JOLoupgris_want_more","GLOBAL",2) TakePartyGold(5000)~ GOTO 10SournoiseMAN
   IF ~Gender(LastTalkedToBy,FEMALE)~ THEN REPLY ~Bon, j'aime aussi d'autres méthodes.~ GOTO 6WOMAN
   IF ~Gender(LastTalkedToBy,MALE)~ THEN REPLY ~Bon, j'aime aussi d'autres méthodes.~ GOTO 6MAN
   IF ~~ THEN REPLY ~C'est une blague, charlatan !~ EXIT
@@ -176,9 +176,9 @@ END
 
 IF ~~ THEN BEGIN 8Furtive
   SAY ~Pour ça il faut être capable d'attaquer de face lorsque l'on est invisible.~
-  IF ~Global("JOLoupgris_8Furtive","GLOBAL",0)~ THEN REPLY ~Trêve de bavardages, vous sembliez sous entendre que c'était faisable ?~ GOTO 9.1Furtive
-  IF ~Global("JOLoupgris_8Furtive","GLOBAL",1)~ THEN REPLY ~Trêve de bavardages et passons au carnage !~ GOTO 9.2Furtive
-  IF ~Global("JOLoupgris_8Furtive","GLOBAL",2)~ THEN REPLY ~Trêve de bavardages, le meurtre n'attend pas.~ GOTO 9.3Furtive
+  IF ~Global("JOLoupgris_want_more","GLOBAL",0)~ THEN REPLY ~Trêve de bavardages, vous sembliez sous entendre que c'était faisable ?~ GOTO 9.1Furtive
+  IF ~Global("JOLoupgris_want_more","GLOBAL",1)~ THEN REPLY ~Trêve de bavardages et passons au carnage !~ GOTO 9.2Furtive
+  IF ~Global("JOLoupgris_want_more","GLOBAL",2)~ THEN REPLY ~Trêve de bavardages, le meurtre n'attend pas.~ GOTO 9.3Furtive
   IF ~Gender(LastTalkedToBy,FEMALE)~ THEN REPLY ~Bon, j'aime aussi d'autres méthodes.~ GOTO 6WOMAN
   IF ~Gender(LastTalkedToBy,MALE)~ THEN REPLY ~Bon, j'aime aussi d'autres méthodes.~ GOTO 6MAN
   IF ~~ THEN REPLY ~C'est une blague, charlatan !~ EXIT
@@ -186,8 +186,8 @@ END
 
 IF ~~ THEN BEGIN 9.1Furtive
   SAY ~Vôtre soif de sang ne sera pas en reste avec la tablette Furtive, pour 1000 pièces d'or elle est à vous !~
-  IF ~Gender(LastTalkedToBy,FEMALE) PartyGoldGT(999)~ THEN REPLY ~Je vois que vous n'hésitez pas à me détrousser au passage.~ DO ~SetGlobal("JOLoupgris_8Furtive","GLOBAL",1) TakePartyGold(1000)~ GOTO 10FurtiveWOMAN
-  IF ~Gender(LastTalkedToBy,MALE) PartyGoldGT(999)~ THEN REPLY ~Je vois que vous n'hésitez pas à me détrousser au passage.~ DO ~SetGlobal("JOLoupgris_8Furtive","GLOBAL",1) TakePartyGold(1000)~ GOTO 10FurtiveMAN
+  IF ~Gender(LastTalkedToBy,FEMALE) PartyGoldGT(999)~ THEN REPLY ~Je vois que vous n'hésitez pas à me détrousser au passage.~ DO ~SetGlobal("JOLoupgris_want_more","GLOBAL",1) TakePartyGold(1000)~ GOTO 10FurtiveWOMAN
+  IF ~Gender(LastTalkedToBy,MALE) PartyGoldGT(999)~ THEN REPLY ~Je vois que vous n'hésitez pas à me détrousser au passage.~ DO ~SetGlobal("JOLoupgris_want_more","GLOBAL",1) TakePartyGold(1000)~ GOTO 10FurtiveMAN
   IF ~Gender(LastTalkedToBy,FEMALE)~ THEN REPLY ~Bon, j'aime aussi d'autres méthodes.~ GOTO 6WOMAN
   IF ~Gender(LastTalkedToBy,MALE)~ THEN REPLY ~Bon, j'aime aussi d'autres méthodes.~ GOTO 6MAN
   IF ~~ THEN REPLY ~C'est une blague, charlatan !~ EXIT
@@ -195,8 +195,8 @@ END
 
 IF ~~ THEN BEGIN 9.2Furtive
   SAY ~Vôtre soif de sang pourra-elle être étanchée avec la tablette Furtive ? Pour 5000 pièces d'or elle est à vous !~
-  IF ~Gender(LastTalkedToBy,FEMALE) PartyGoldGT(4999)~ THEN REPLY ~Je vois que vous ne vous contentez pas d'une seule bourse...~ DO ~SetGlobal("JOLoupgris_8Furtive","GLOBAL",2) TakePartyGold(5000)~ GOTO 10FurtiveWOMAN
-  IF ~Gender(LastTalkedToBy,MALE) PartyGoldGT(4999)~ THEN REPLY ~Je vois que vous ne vous contentez pas d'une seule bourse...~ DO ~SetGlobal("JOLoupgris_8Furtive","GLOBAL",2) TakePartyGold(5000)~ GOTO 10FurtiveMAN
+  IF ~Gender(LastTalkedToBy,FEMALE) PartyGoldGT(4999)~ THEN REPLY ~Je vois que vous ne vous contentez pas d'une seule bourse...~ DO ~SetGlobal("JOLoupgris_want_more","GLOBAL",2) TakePartyGold(5000)~ GOTO 10FurtiveWOMAN
+  IF ~Gender(LastTalkedToBy,MALE) PartyGoldGT(4999)~ THEN REPLY ~Je vois que vous ne vous contentez pas d'une seule bourse...~ DO ~SetGlobal("JOLoupgris_want_more","GLOBAL",2) TakePartyGold(5000)~ GOTO 10FurtiveMAN
   IF ~Gender(LastTalkedToBy,FEMALE)~ THEN REPLY ~Bon, j'aime aussi d'autres méthodes.~ GOTO 6WOMAN
   IF ~Gender(LastTalkedToBy,MALE)~ THEN REPLY ~Bon, j'aime aussi d'autres méthodes.~ GOTO 6MAN
   IF ~~ THEN REPLY ~C'est une blague, charlatan !~ EXIT
@@ -225,9 +225,9 @@ END
 
 IF ~~ THEN BEGIN 8Vilain
   SAY ~Pour ça il faut être capable d'attaquer de face sans se soucier d'être vu.~
-  IF ~Global("JOLoupgris_8Vilain","GLOBAL",0)~ THEN REPLY ~Trêve de bavardages, vous sembliez sous entendre que c'était faisable ?~ GOTO 9.1Vilain
-  IF ~Global("JOLoupgris_8Vilain","GLOBAL",1)~ THEN REPLY ~Trêve de bavardages et passons au carnage !~ GOTO 9.2Vilain
-  IF ~Global("JOLoupgris_8Vilain","GLOBAL",2)~ THEN REPLY ~Trêve de bavardages, le meurtre n'attend pas.~ GOTO 9.3Vilain
+  IF ~Global("JOLoupgris_want_more","GLOBAL",0)~ THEN REPLY ~Trêve de bavardages, vous sembliez sous entendre que c'était faisable ?~ GOTO 9.1Vilain
+  IF ~Global("JOLoupgris_want_more","GLOBAL",1)~ THEN REPLY ~Trêve de bavardages et passons au carnage !~ GOTO 9.2Vilain
+  IF ~Global("JOLoupgris_want_more","GLOBAL",2)~ THEN REPLY ~Trêve de bavardages, le meurtre n'attend pas.~ GOTO 9.3Vilain
   IF ~Gender(LastTalkedToBy,FEMALE)~ THEN REPLY ~Bon, j'aime aussi d'autres méthodes.~ GOTO 6WOMAN
   IF ~Gender(LastTalkedToBy,MALE)~ THEN REPLY ~Bon, j'aime aussi d'autres méthodes.~ GOTO 6MAN
   IF ~~ THEN REPLY ~C'est une blague, charlatan !~ EXIT
@@ -235,8 +235,8 @@ END
 
 IF ~~ THEN BEGIN 9.1Vilain
   SAY ~Vôtre soif de sang ne sera pas en reste avec la tablette du Vilain, pour 1000 pièces d'or elle est à vous !~
-  IF ~Gender(LastTalkedToBy,FEMALE) PartyGoldGT(999)~ THEN REPLY ~Je vois que vous n'hésitez pas à me détrousser au passage.~ DO ~SetGlobal("JOLoupgris_8Vilain","GLOBAL",1) TakePartyGold(1000)~ GOTO 10VilainWOMAN
-  IF ~Gender(LastTalkedToBy,MALE) PartyGoldGT(999)~ THEN REPLY ~Je vois que vous n'hésitez pas à me détrousser au passage.~ DO ~SetGlobal("JOLoupgris_8Vilain","GLOBAL",1) TakePartyGold(1000)~ GOTO 10VilainMAN
+  IF ~Gender(LastTalkedToBy,FEMALE) PartyGoldGT(999)~ THEN REPLY ~Je vois que vous n'hésitez pas à me détrousser au passage.~ DO ~SetGlobal("JOLoupgris_want_more","GLOBAL",1) TakePartyGold(1000)~ GOTO 10VilainWOMAN
+  IF ~Gender(LastTalkedToBy,MALE) PartyGoldGT(999)~ THEN REPLY ~Je vois que vous n'hésitez pas à me détrousser au passage.~ DO ~SetGlobal("JOLoupgris_want_more","GLOBAL",1) TakePartyGold(1000)~ GOTO 10VilainMAN
   IF ~Gender(LastTalkedToBy,FEMALE)~ THEN REPLY ~Bon, j'aime aussi d'autres méthodes.~ GOTO 6WOMAN
   IF ~Gender(LastTalkedToBy,MALE)~ THEN REPLY ~Bon, j'aime aussi d'autres méthodes.~ GOTO 6MAN
   IF ~~ THEN REPLY ~C'est une blague, charlatan !~ EXIT
@@ -244,8 +244,8 @@ END
 
 IF ~~ THEN BEGIN 9.2Vilain
   SAY ~Vôtre soif de sang pourra-elle être étanchée avec la tablette du Vilain ? Pour 5000 pièces d'or elle est à vous !~
-  IF ~Gender(LastTalkedToBy,FEMALE) PartyGoldGT(4999)~ THEN REPLY ~Je vois que vous ne vous contentez pas d'une seule bourse...~ DO ~SetGlobal("JOLoupgris_8Vilain","GLOBAL",2) TakePartyGold(5000)~ GOTO 10VilainWOMAN
-  IF ~Gender(LastTalkedToBy,MALE) PartyGoldGT(4999)~ THEN REPLY ~Je vois que vous ne vous contentez pas d'une seule bourse...~ DO ~SetGlobal("JOLoupgris_8Vilain","GLOBAL",2) TakePartyGold(5000)~ GOTO 10VilainMAN
+  IF ~Gender(LastTalkedToBy,FEMALE) PartyGoldGT(4999)~ THEN REPLY ~Je vois que vous ne vous contentez pas d'une seule bourse...~ DO ~SetGlobal("JOLoupgris_want_more","GLOBAL",2) TakePartyGold(5000)~ GOTO 10VilainWOMAN
+  IF ~Gender(LastTalkedToBy,MALE) PartyGoldGT(4999)~ THEN REPLY ~Je vois que vous ne vous contentez pas d'une seule bourse...~ DO ~SetGlobal("JOLoupgris_want_more","GLOBAL",2) TakePartyGold(5000)~ GOTO 10VilainMAN
   IF ~Gender(LastTalkedToBy,FEMALE)~ THEN REPLY ~Bon, j'aime aussi d'autres méthodes.~ GOTO 6WOMAN
   IF ~Gender(LastTalkedToBy,MALE)~ THEN REPLY ~Bon, j'aime aussi d'autres méthodes.~ GOTO 6MAN
   IF ~~ THEN REPLY ~C'est une blague, charlatan !~ EXIT
