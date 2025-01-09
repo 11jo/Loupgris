@@ -5,11 +5,10 @@ IF
 THEN
 	RESPONSE #100
 		SetGlobal("JOSLOUM2_IS_HERE","MYAREA",0)
-		CreateCreatureImpassableAllowOverlap("JOLOUPA2",[%JOLOUPA2_place%],0)
+		SetGlobal("JOSLOUM2_THE_DAY","MYAREA",1)
+		// CreateCreatureImpassableAllowOverlap("JOLOUPA2",[%JOLOUPA2_place%],0)
 		MoveToPointNoInterrupt([%JOSLOUM2_place%])
 		DisplayStringHead(Myself,~C'est ma place !~)
-		Wait(2)
-		SetGlobal("JOSLOUM2_THE_DAY","MYAREA",1)
 END
 
 IF

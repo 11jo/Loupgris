@@ -26,7 +26,6 @@ THEN
 		SetGlobal("JOLoupgris_The_Night","GLOBAL",0)
 		SetGlobal("JOLoupgris_The_Night_Is_Near","LOCALS",0)
 		SetGlobal("JOLoupgris_JOSLOUM","LOCALS",0)
-		Wait(1)
 		DisplayStringHead(Myself,~Je suis la nuit...~)
 		UseItem("POTN10",Myself)
 		SetGlobalTimer("JOLoupgris_Wait","GLOBAL",ONE_DAY)

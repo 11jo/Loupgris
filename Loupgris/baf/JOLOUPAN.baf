@@ -1,6 +1,4 @@
 IF
-	!InMyArea("JOHADDUD")
-	!Dead("JOHADDUD")
 	Global("JOLoupgris_The_Night","GLOBAL",1)
 	Global("JOLOUPAN_ISHERE","MYAREA",0)
 	!TimeOfDay(DAY)
@@ -9,14 +7,13 @@ IF
 THEN
 	RESPONSE #100
 		SetGlobal("JOLOUPAN_ISHERE","MYAREA",1)
-		OpenDoor("DOOR09")
-		Wait(2)
+		OpenDoor("Door0406a")
+		Wait(1)
 		CreateCreature("JOHADDUD",[%JOHADDUD_he%],0)
 		CreateCreature("JOSLOUM2",[%JOSLOUM2_place%],0) // NO SET
 		CreateCreatureImpassableAllowOverlap("JOLOUPA2",[%JOLOUPA2_place%],0)
 		// CreateCreature("JOSLOUM2",[%JOHADDUD_place%],0)
-		Wait(1)
-		CloseDoor("DOOR09")
-		Wait(1)
+		Wait(2)
+		CloseDoor("Door0406a")
 		DestroySelf()
 END

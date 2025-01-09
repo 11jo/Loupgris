@@ -1,6 +1,7 @@
 IF
 	!InMyArea("JOHADDUD")
 	Global("JOSLOUM2_THE_DAY","MYAREA",1)
+	Delay(5)
 	// Global("JOLoupgris_The_Night","GLOBAL",0)
 	// TimeOfDay(DAY)		
 	// GlobalTimerNotExpired("JOLoupgris_He_ho","GLOBAL")
@@ -8,8 +9,9 @@ THEN
 	RESPONSE #100
 		SetGlobal("JOLoupgris_JOLOUPA2","MYAREA",0)
 		SetGlobal("JOLOUPAN_ISHERE","MYAREA",0)
+		SetGlobal("JOSLOUM2_THE_DAY","MYAREA",2)
+		SmallWait(1)
 		// ActionOverride("JOSLOUM2",EscapeArea())
-		Wait(5)
 		DestroySelf()
 END
 
@@ -17,6 +19,7 @@ IF
 	Global("JOLoupgris_The_Night","GLOBAL",2)
 	See("JOHADDUD")
 	Range("JOHADDUD",10)
+	Delay(5)
 	// TimeOfDay(DAY)		
 	// GlobalTimerNotExpired("JOLoupgris_He_ho","GLOBAL")
 THEN
@@ -24,6 +27,6 @@ THEN
 		SetGlobal("JOLoupgris_JOLOUPA2","MYAREA",0)
 		SetGlobal("JOLOUPAN_ISHERE","MYAREA",0)
 		// ActionOverride("JOSLOUM2",EscapeArea())
-		Wait(5)
+		SmallWait(1)
 		DestroySelf()
 END
